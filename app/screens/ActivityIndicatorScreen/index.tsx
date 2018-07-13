@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
+import { State } from './state';
+import { Props } from './props';
+import { Size } from '../../components/activityIndicators/props';
 import styles from './styles';
 import colors from '../../utils/colors';
 import { MtrLoader, MtrLoaderWithText, MtrLoaderFullScreen } from '../../components/activityIndicators';
 import { MtrBtnRegular } from '../../components/buttons';
 
-class ActivityIndicatorScreen extends Component {
-  constructor(props) {
+class ActivityIndicatorScreen extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
-      fullscreen: false,
+      fullscreen: false
     };
   }
 
@@ -38,7 +41,7 @@ class ActivityIndicatorScreen extends Component {
         </View>
         <View>
           <Text style={styles.title}>Loader Change Size</Text>
-          <MtrLoader size="small" />
+          <MtrLoader size={Size.small} />
         </View>
         <View>
           <Text style={styles.title}>Loader with Text</Text>

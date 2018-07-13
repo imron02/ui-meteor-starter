@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Component } from 'react';
 import { View } from 'react-native';
 
 // STYLESHEET
@@ -13,12 +14,7 @@ import {
   MtrBtnNoFeedback,
 } from '../../components/buttons';
 
-class ButtonScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
+export class ButtonScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -46,5 +42,3 @@ class ButtonScreen extends Component {
     );
   }
 }
-
-export default ButtonScreen;

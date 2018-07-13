@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 
-// STYLES
-import styles from './styles';
+import { Props } from './props';
+import { State } from './state';
+import { styles } from './styles';
 
-class HomeScreen extends Component {
-  constructor(props) {
+export class HomeScreen extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
-
-    this.state = {};
   }
 
   openDrawer = () => {
@@ -27,6 +27,4 @@ class HomeScreen extends Component {
     );
   }
 }
-
-export default HomeScreen;
 
