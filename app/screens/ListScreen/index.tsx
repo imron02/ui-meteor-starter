@@ -6,38 +6,75 @@ import { Props } from './props';
 import { State } from './state';
 import styles from './style';
 import VerticalList from '../../components/VerticalList';
+import HorizontalList from '../../components/HorizontalList';
 
 const meteorLogoRed = require('../../assets/images/meteor_logo_red.png');
 
 class ListScreen extends Component<Props, State> {
   state: State = {
-    data: []
+    datas: []
   };
 
   constructor(props: Props) {
     super(props);
 
-    const data = [
-      { image: meteorLogoRed, title: 'Title satu', subTitle: 'Subtitle satu' },
-      { image: meteorLogoRed, title: 'Title dua', subTitle: 'Subtitle dua' },
-      { image: meteorLogoRed, title: 'Title tiga', subTitle: 'Subtitle tiga' },
-      { image: meteorLogoRed, title: 'Title empat', subTitle: 'Subtitle empat' },
-      { image: meteorLogoRed, title: 'Title lima', subTitle: 'Subtitle lima' }
+    const datas = [
+      {
+        image: meteorLogoRed,
+        title: 'Title satu',
+        subTitle: 'Subtitle satu',
+        rating: 1,
+        description: 'Description satu'
+      },
+      {
+        image: meteorLogoRed,
+        title: 'Title dua',
+        subTitle: 'Subtitle dua',
+        rating: 2,
+        description: 'Description dua'
+      },
+      {
+        image: meteorLogoRed,
+        title: 'Title tiga',
+        subTitle: 'Subtitle tiga',
+        rating: 3.5,
+        description: 'Description tiga'
+      },
+      {
+        image: meteorLogoRed,
+        title: 'Title empat',
+        subTitle: 'Subtitle empat',
+        rating: 4,
+        description: 'Description empat'
+      },
+      {
+        image: meteorLogoRed,
+        title: 'Title lima',
+        subTitle: 'Subtitle lima',
+        rating: 5,
+        description: 'Description lima'
+      }
     ];
 
     this.state = {
-      data
+      datas
     };
   }
 
   render() {
-    const { data } = this.state;
+    const { datas } = this.state;
 
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>Vertical List</Text>
+        <View>
+          <Text style={styles.header}>Horizontal List</Text>
+          <VerticalList data={datas} />
+        </View>
 
-        <VerticalList data={data} />
+        <View>
+          <Text style={styles.header}>Horizontal List</Text>
+          <HorizontalList data={datas} />
+        </View>
       </View>
     );
   }
