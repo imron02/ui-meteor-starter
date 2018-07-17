@@ -1,27 +1,46 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../utils/colors';
+import width from '../../utils/commons';
 
 const styles = StyleSheet.create({
   container: {
-    width: 140,
+    width: width.deviceWidth,
     height: 180,
-    marginLeft: 8,
-    marginRight: 8
+    paddingLeft: 16,
+    paddingRight: 16,
+    flexDirection: 'row'
+  },
+  imageContainer: {
+    marginRight: 16,
   },
   image: {
     width: 140,
     height: 140,
-    justifyContent: 'flex-end',
-    padding: 5
+    resizeMode: 'contain'
+  },
+  contentContainer: {
+    flex: 1,
+    height: 140,
+    justifyContent: 'space-between'
   },
   subTitle: {
-    fontSize: 14,
-    color: colors.WHITE
+    fontSize: 12,
+    color: colors.BLACK
   },
   title: {
     fontSize: 14,
-    marginTop: 8,
-    color: colors.BLACK
+    color: colors.BLACK,
+    fontWeight: '600'
+  },
+  button: {
+    backgroundColor: colors.RED,
+    borderColor: colors.RED
+  },
+  starContainer: {
+    width: 112
+  },
+  star: {
+    marginRight: 5
   }
 });
 

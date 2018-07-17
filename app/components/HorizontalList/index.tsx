@@ -1,48 +1,20 @@
 import React from 'react';
 import { Component } from 'react';
-import { FlatList, View, Text, Image, Platform } from 'react-native';
-import StarRating from 'react-native-star-rating';
+import { FlatList, View, Text, ImageBackground } from 'react-native';
 
 import { Props, dataObject } from './props';
 import { State } from './state';
 import styles from './style';
-import { MtrBtnNative, MtrBtnHighlight } from '../buttons';
-import colors from '../../utils/colors';
 
-class HorizontalList extends Component<Props, State> {
-  renderButton = () => {
-    const title = 'VISIT';
-
-    if (Platform.OS === 'android') {
-      return <MtrBtnNative title={title} style={styles.button} />;
-    }
-
-    return <MtrBtnHighlight title={title} />;
-  }
-
+class VerticalList extends Component<Props, State> {
   renderItem = (data: any) => {
     const { item } = data;
     return (
       <View style={styles.container}>
-        <View style={styles.imageContainer}>
-          <Image source={item.image} style={styles.image} />
-        </View>
-        <View style={styles.contentContainer}>
-          <Text style={styles.title}>{item.title}</Text>
-          <StarRating
-            maxStars={5}
-            disabled
-            rating={item.rating}
-            fullStarColor={colors.RED}
-            halfStarEnabled
-            starSize={30}
-            containerStyle={styles.starContainer}
-            starStyle={styles.star}
-          />
+        <ImageBackground source={item.image} style={styles.image}>
           <Text style={styles.subTitle}>{item.subTitle}</Text>
-          <Text style={styles.subTitle}>{item.description}</Text>
-          {this.renderButton()}
-        </View>
+        </ImageBackground>
+        <Text style={styles.title}>{item.title}</Text>
       </View>
     );
   }
@@ -57,9 +29,10 @@ class HorizontalList extends Component<Props, State> {
         data={data}
         keyExtractor={this.keyExtractor}
         renderItem={this.renderItem}
+        horizontal
       />
     );
   }
 }
 
-export default HorizontalList;
+export default VerticalList;

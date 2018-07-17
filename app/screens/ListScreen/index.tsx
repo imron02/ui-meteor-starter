@@ -68,12 +68,12 @@ class ListScreen extends Component<Props, State> {
       <View style={styles.container}>
         <View>
           <Text style={styles.header}>Horizontal List</Text>
-          <VerticalList data={datas} />
+          <HorizontalList data={datas} />
         </View>
 
         <View>
           <Text style={styles.header}>Horizontal List</Text>
-          <HorizontalList data={datas} />
+          <VerticalList data={datas} />
         </View>
       </View>
     );
