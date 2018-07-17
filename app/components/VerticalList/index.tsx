@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import { FlatList, View, Text, Image, ImageBackground } from 'react-native';
+import { FlatList, View, Text, ImageBackground } from 'react-native';
 
 import { Props, dataObject } from './props';
 import { State } from './state';
