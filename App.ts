@@ -4,18 +4,25 @@ import { createDrawerNavigator } from 'react-navigation';
 import { HomeScreen } from './app/screens/HomeScreen';
 import { ButtonScreen } from './app/screens/ButtonScreen';
 import ActivityIndicatorScreen from './app/screens/ActivityIndicatorScreen';
+import ListScreen from './app/screens/ListScreen';
 
 export default createDrawerNavigator({
   Home: {
-    screen: HomeScreen,
+    screen: HomeScreen
   },
   Buttons: {
-    screen: ButtonScreen,
+    screen: ButtonScreen
   },
   ActivityIndicator: {
     screen: ActivityIndicatorScreen,
     navigationOptions: () => ({
-      title: 'Activity Indicator',
-    }),
+      title: 'Activity Indicator'
+    })
+  },
+  ListScreen: {
+    screen: ListScreen,
+    navigationOptions: () => ({
+      title: 'List'
+    })
   }
 });

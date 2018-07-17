@@ -3,10 +3,10 @@ import { View, Text } from 'react-native';
 
 import { State } from './state';
 import { Props } from './props';
-import { Size } from '../../components/activityIndicators/props';
+import { Size } from '../../components/ActivityIndicators/props';
 import styles from './styles';
 import colors from '../../utils/colors';
-import { MtrLoader, MtrLoaderWithText, MtrLoaderFullScreen } from '../../components/activityIndicators';
+import { MtrLoader, MtrLoaderWithText, MtrLoaderFullScreen } from '../../components/ActivityIndicators';
 import { MtrBtnRegular } from '../../components/buttons';
 
 class ActivityIndicatorScreen extends Component<Props, State> {
