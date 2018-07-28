@@ -1,6 +1,6 @@
 import { Dimensions } from 'react-native';
 
-export default {
-  deviceWidth: Dimensions.get('window').width,
-  deviceHeight: Dimensions.get('window').height
-}
+export const deviceWidth = Dimensions.get('window').width;
+export const deviceHeight = Dimensions.get('window').height;
+
+export default deviceWidth;

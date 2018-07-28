@@ -1,13 +1,13 @@
 import React from 'react';
 import { Component } from 'react';
-import { FlatList, View, Text, Image, Platform } from 'react-native';
+import { FlatList, Image, Platform, Text, View } from 'react-native';
 import StarRating from 'react-native-star-rating';
 
-import { Props, dataObject } from './props';
+import colors from '../../utils/colors';
+import { MtrBtnNative, MtrBtnOpacity } from '../Buttons';
+import { dataObject, Props } from './props';
 import { State } from './state';
 import styles from './style';
-import { MtrBtnNative, MtrBtnOpacity } from '../buttons';
-import colors from '../../utils/colors';
 
 class HorizontalList extends Component<Props, State> {
   renderButton = () => {
