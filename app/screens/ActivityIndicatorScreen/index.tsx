@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { Text, View } from 'react-native';
 
-import { State } from './state';
-import { Props } from './props';
+import { MtrLoader, MtrLoaderFullScreen, MtrLoaderWithText } from '../../components/ActivityIndicators';
 import { Size } from '../../components/ActivityIndicators/props';
-import styles from './styles';
+import { MtrBtnRegular } from '../../components/Buttons';
 import colors from '../../utils/colors';
-import { MtrLoader, MtrLoaderWithText, MtrLoaderFullScreen } from '../../components/ActivityIndicators';
-import { MtrBtnRegular } from '../../components/buttons';
+import { Props } from './props';
+import { State } from './state';
+import styles from './styles';
 
 class ActivityIndicatorScreen extends Component<Props, State> {
-  constructor(props: Props) {
+  constructor (props: Props) {
     super(props);
 
     this.state = {
@@ -26,7 +26,7 @@ class ActivityIndicatorScreen extends Component<Props, State> {
     this.setState({ fullscreen: true });
   }
 
-  render() {
+  render () {
     const { fullscreen } = this.state;
 
     return (
