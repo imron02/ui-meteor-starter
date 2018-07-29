@@ -12,8 +12,21 @@ import colors from '../../utils/colors';
 import styles from './styles';
 
 const meteorLogo = require('../../assets/images/meteor_logo_white.png');
+import Props from './props';
 
-class LoginScreen extends Component {
+class LoginScreen extends Component<Props> {
+  componentDidMount() {
+    const { setStatusBarLight } = this.props;
+
+    setStatusBarLight();
+  }
+
+  componentWillUnmount() {
+    const { setStatusBarDark } = this.props;
+
+    setStatusBarDark();
+  }
+
   render() {
     return (
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>

@@ -1,50 +1,18 @@
-import React from 'react';
-import { SafeAreaView, StatusBar } from 'react-native';
-import { createDrawerNavigator } from 'react-navigation';
+import React, { PureComponent } from 'react';
+import { Provider } from 'react-redux';
 
-import styles from './style';
+// Navigator
+import Navigator from './app/navigator/container';
 
-// SCREEENS
-import ActivityIndicatorScreen from './app/screens/ActivityIndicatorScreen';
-import { ButtonScreen } from './app/screens/ButtonScreen';
-import { HomeScreen } from './app/screens/HomeScreen';
-import ListScreen from './app/screens/ListScreen';
-import LoginScreen from './app/screens/LoginScreen';
+// Store
+import store from './app/store';
 
-const RootStack = createDrawerNavigator({
-  Home: {
-    screen: HomeScreen
-  },
-  Buttons: {
-    screen: ButtonScreen
-  },
-  ActivityIndicator: {
-    screen: ActivityIndicatorScreen,
-    navigationOptions: () => ({
-      title: 'Activity Indicator'
-    })
-  },
-  ListScreen: {
-    screen: ListScreen,
-    navigationOptions: () => ({
-      title: 'List'
-    })
-  },
-  LoginScreen: {
-    screen: LoginScreen
-  }
-});
-export default class App extends React.Component {
-  statusbar = () => {
-    return <StatusBar barStyle="dark-content" />;
-  }
-
+export default class App extends PureComponent {
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        {this.statusbar()}
-        <RootStack />
-      </SafeAreaView>
+      <Provider store={store}>
+        <Navigator />
+      </Provider>
     );
   }
 }
