@@ -1,6 +1,7 @@
 {
   "extends": [
-    "tslint-react-recommended"
+    "tslint-react-recommended",
+    "tslint-config-standard"
   ],
   "rules": {
     "ordered-imports": [
@@ -9,16 +10,9 @@
     "quotemark": [
       true,
       "single",
-      "jsx-single",
-      "avoid-escape"
+      "jsx-double"
     ],
-    "semicolon": [
-      true,
-      "never"
-    ],
-    "member-access": [
-      false
-    ],
+    "member-access": false,
     "member-ordering": [
       false
     ],
@@ -26,7 +20,12 @@
       true,
       {
         "singleline": "never",
-        "multiline": "always"
+        "multiline": {
+          "objects": "never",
+          "arrays": "always",
+          "functions": "never",
+          "typeLiterals": "ignore"
+        }
       }
     ],
     "no-empty": false,
@@ -48,8 +47,9 @@
     "jsx-alignment": true,
     "jsx-no-bind": true,
     "jsx-no-lambda": true,
-    "max-classes-per-file": [
-      false
-    ]
+    "max-classes-per-file": false,
+    "semicolon": true,
+    "no-unused-variable": true,
+    "space-before-function-paren": false
   }
 }

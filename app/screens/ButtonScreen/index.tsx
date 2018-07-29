@@ -7,36 +7,38 @@ import styles from './styles';
 
 // COMPONENT
 import {
-  MtrBtnRegular,
-  MtrBtnNative,
   MtrBtnHighlight,
-  MtrBtnOpacity,
+  MtrBtnNative,
   MtrBtnNoFeedback,
-} from '../../components/buttons';
+  MtrBtnOpacity,
+  MtrBtnRegular,
+} from '../../components/Buttons';
 
 export class ButtonScreen extends Component {
-  render() {
+  onPress = () => { };
+
+  render () {
     return (
       <View style={styles.container}>
         <MtrBtnRegular
           title="BUTTON REGULAR"
-          onPress={() => {}}
+          onPress={this.onPress}
         />
         <MtrBtnNative
           title="BUTTON NATIVE"
-          onPress={() => {}}
+          onPress={this.onPress}
         />
         <MtrBtnHighlight
           title="BUTTON HIGHLIGHT"
-          onPress={() => {}}
+          onPress={this.onPress}
         />
         <MtrBtnOpacity
           title="BUTTON OPACITY"
-          onPress={() => {}}
+          onPress={this.onPress}
         />
         <MtrBtnNoFeedback
           title="BUTTON NO FEEDBACK"
-          onPress={() => {}}
+          onPress={this.onPress}
         />
       </View>
     );
