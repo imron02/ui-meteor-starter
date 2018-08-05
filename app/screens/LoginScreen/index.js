@@ -16,16 +16,22 @@ import type { Props } from './props';
 import meteorLogo from '../../assets/images/meteor_logo_white.png';
 
 class LoginScreen extends Component<Props> {
-  componentDidMount() {
+  componentDidMount(): void {
     const { setStatusBarLight } = this.props;
 
     setStatusBarLight();
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     const { setStatusBarDark } = this.props;
 
     setStatusBarDark();
+  }
+
+  register = (): void => {
+    const { navigation } = this.props;
+
+    navigation.navigate('Register');
   }
 
   render() {
@@ -35,20 +41,22 @@ class LoginScreen extends Component<Props> {
         <Text style={styles.logoText}>Silahkan login untuk melanjutkan</Text>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Email</Text>
           <TextInput
             style={styles.input}
-            selectionColor={colors.WHITE}
+            selectionColor={colors.BLACK}
             keyboardType="email-address"
+            clearButtonMode="while-editing"
+            placeholder="Email"
           />
         </View>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Password</Text>
           <TextInput
             style={styles.input}
-            selectionColor={colors.WHITE}
+            selectionColor={colors.BLACK}
             secureTextEntry
+            clearButtonMode="while-editing"
+            placeholder="Password"
           />
         </View>
 
@@ -57,11 +65,11 @@ class LoginScreen extends Component<Props> {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.loginButton}>
-          <Text style={styles.loginButtonText}>LOGIN</Text>
+          <Text style={styles.loginButtonText}>MASUK</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.registerButton}>
-          <Text style={styles.registerButtonText}>REGISTER</Text>
+        <TouchableOpacity style={styles.registerButton} onPress={this.register}>
+          <Text style={styles.registerButtonText}>DAFTAR</Text>
         </TouchableOpacity>
       </ScrollView>
     );

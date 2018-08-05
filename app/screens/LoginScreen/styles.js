@@ -33,24 +33,30 @@ const styles = StyleSheet.create({
   inputContainer: {
     padding: 15,
     width: deviceWidth,
-    height: 65
+    height: 38,
+    marginTop: 6
   },
   label: {
     color: colors.WHITE,
     fontSize: 12
   },
   input: {
-    color: colors.WHITE,
-    borderBottomWidth: 0.5,
+    color: colors.BLACK,
     borderBottomColor: colors.WHITE,
+    backgroundColor: colors.WHITE,
     padding: 5,
-    fontSize: 12
+    fontSize: 17,
+    height: 38,
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: colors.WHITE
   },
   forgotButton: {
     height: 50,
     width: deviceWidth,
     padding: 15,
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    marginTop: 25
   },
   forgotText: {
     color: colors.WHITE,
