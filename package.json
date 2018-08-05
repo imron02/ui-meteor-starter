@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "lint": "tslint --project tsconfig.json",
+    "lint": "eslint app index.* --ext .js --cache --color",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "flow": "flow",
-    "flow-stop": "flow stop"
+    "flow-stop": "flow stop",
+    "precommit": "sh precommit-check.sh"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
