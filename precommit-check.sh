@@ -15,13 +15,12 @@ function lint() {
   if [ "$2" ]; then
     echo "Linting changed $1 files"
     $nm_bin/eslint $2
+    $nm_bin/flow $2
   else
     echo "No $1 files changed"
   fi
 }
 
 lint "app index.* --ext .js --cache --color" $SRC_FILES;
-
-yarn flow $SRC_FILES
 
 echo "⚡️  changed files passed linting! ⚡️"
