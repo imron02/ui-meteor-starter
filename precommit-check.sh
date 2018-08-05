@@ -1,43 +1,27 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -e
 
-files=$(git diff --cached --name-only --diff-filter=ACM | grep ".js$")
-if [ "$files" == "" ]; then
-    exit 0
-fi
+# allow being run from somewhere other than the git rootdir
+gitroot=$(git rev-parse --show-cdup)
 
-flow=$(yarn flow) # Change this to your flow script in package.json
-eslint=$PWD/node_modules/.bin/eslint
+# default gitroot to . if we're already at the rootdir
+gitroot=${gitroot:-.};
+nm_bin=$gitroot/node_modules/.bin
 
-flowfiles=""
-flowerrors="false"
-lintfiles=""
-linterrors="false"
+echo "===== Linting changed Staged files ===="
+SRC_FILES=$(git diff --staged --diff-filter=ACMTUXB --name-only -- '*.js' | grep -v '\.test\|mock\|e2e\.js$') && x=1
 
-for file in ${files}; do
-    if [[ "$flow" == *"$file"* ]]; then
-        flowfiles+="\n$file"
-        flowerrors="true"
-    fi
-done
+function lint() {
+  if [ "$2" ]; then
+    echo "Linting changed $1 files"
+    $nm_bin/eslint $2
+  else
+    echo "No $1 files changed"
+  fi
+}
 
-for file in ${files}; do
-    lint=$($eslint -c .eslintrc ${file})
-    if [[ "$lint" == *"problem"* ]]; then
-        lintfiles+="\n$file"
-        linterrors="true"
-    fi
-done
+lint "app index.* --ext .js --cache --color" $SRC_FILES;
 
-if [ "$flowerrors" == "true" ]; then
-    echo "$flow"
-    echo "\n\033[41m COMMIT FAILED: \033[0m Your commit contains flow errors in: $flowfiles"
-fi
+yarn flow $SRC_FILES
 
-if [ "$linterrors" == "true" ]; then
-    $eslint -c .eslintrc ${files}
-    echo "\n\033[41m COMMIT FAILED: \033[0m Your commit contains lint errors and/or warnings in: $lintfiles"
-fi
-
-if [ "$flowerrors" == "true" ] || [ "$linterrors" == "true" ] ; then
-    exit 1
-fi
+echo "⚡️  changed files passed linting! ⚡️"

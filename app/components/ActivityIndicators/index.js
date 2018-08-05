@@ -4,7 +4,7 @@ import React from 'react';
 import { ActivityIndicator, Modal, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 
-import Props from './props';
+import type { Props } from './props';
 import styles from './styles';
 import colors from '../../utils/colors';
 
