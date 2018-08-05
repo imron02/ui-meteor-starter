@@ -1,0 +1,4 @@
+// @flow
+
+export const SETBAR_STYLE_DARK = 'SETBAR_STYLE_DARK';
+export const SETBAR_STYLE_LIGHT = 'SETBAR_STYLE_LIGHT';
