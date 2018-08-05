@@ -62,29 +62,29 @@ const styles = StyleSheet.create({
     color: colors.WHITE,
     fontSize: 12
   },
-  loginButton: {
+  registerButton: {
     height: 40,
     width: deviceWidth - 30,
     backgroundColor: colors.WHITE,
     borderRadius: 10,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: 40
   },
-  loginButtonText: {
+  registerButtonText: {
     color: colors.BLACK,
     fontSize: 14,
     fontWeight: 'bold'
   },
-  registerButton: {
+  loginButton: {
     height: 40,
     width: deviceWidth - 30,
     alignItems: 'center',
     justifyContent: 'center'
   },
-  registerButtonText: {
+  loginButtonText: {
     color: colors.WHITE,
-    fontSize: 14,
-    fontWeight: 'bold'
+    fontSize: 14
   }
 });
 

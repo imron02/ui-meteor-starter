@@ -15,30 +15,28 @@ import styles from './styles';
 import type { Props } from './props';
 import meteorLogo from '../../assets/images/meteor_logo_white.png';
 
-class LoginScreen extends Component<Props> {
+class RegisterScreen extends Component<Props> {
+  static navigationOptions = {
+    title: 'Register'
+  };
+
   componentDidMount(): void {
     const { setStatusBarLight } = this.props;
 
     setStatusBarLight();
   }
 
-  componentWillUnmount(): void {
-    const { setStatusBarDark } = this.props;
-
-    setStatusBarDark();
-  }
-
-  register = (): void => {
+  login = (): void => {
     const { navigation } = this.props;
 
-    navigation.navigate('Register');
+    navigation.goBack();
   }
 
   render() {
     return (
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <Image source={meteorLogo} style={styles.logo} />
-        <Text style={styles.logoText}>Silahkan login untuk melanjutkan</Text>
+        <Text style={styles.logoText}>Silahkan register untuk membuat akun</Text>
 
         <View style={styles.inputContainer}>
           <TextInput
@@ -60,20 +58,26 @@ class LoginScreen extends Component<Props> {
           />
         </View>
 
-        <TouchableOpacity style={styles.forgotButton}>
-          <Text style={styles.forgotText}>Lupa password?</Text>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.input}
+            selectionColor={colors.BLACK}
+            secureTextEntry
+            clearButtonMode="while-editing"
+            placeholder="Konfirmasi"
+          />
+        </View>
+
+        <TouchableOpacity style={styles.registerButton}>
+          <Text style={styles.registerButtonText}>REGISTER</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.loginButton}>
-          <Text style={styles.loginButtonText}>MASUK</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.registerButton} onPress={this.register}>
-          <Text style={styles.registerButtonText}>DAFTAR</Text>
+        <TouchableOpacity style={styles.loginButton} onPress={this.login}>
+          <Text style={styles.loginButtonText}>Sudah punya akun? Masuk</Text>
         </TouchableOpacity>
       </ScrollView>
     );
   }
 }
 
-export default LoginScreen;
+export default RegisterScreen;
