@@ -9,6 +9,8 @@ import styles from './style';
 import { MtrBtnRegular } from '../../components/Buttons';
 import Popup from '../../components/Popup';
 
+import meteorLogoRed from '../../assets/images/meteor_logo_red.png';
+
 class PopupScreen extends PureComponent<Props, State> {
   state: State;
 
@@ -22,6 +24,8 @@ class PopupScreen extends PureComponent<Props, State> {
 
   onShow = () => this.setState({ showPopup: true });
 
+  onClose = () => this.setState({ showPopup: false });
+
   render() {
     const { showPopup } = this.state;
 
@@ -33,6 +37,9 @@ class PopupScreen extends PureComponent<Props, State> {
         />
         <Popup
           visible={showPopup}
+          headerImage={meteorLogoRed}
+          headerTitle="Popup"
+          onClose={this.onClose}
         />
       </View>
     );
