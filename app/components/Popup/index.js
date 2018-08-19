@@ -42,6 +42,7 @@ class Popup extends PureComponent<Props> {
         animationType="fade"
         transparent
         visible={visible}
+        onRequestClose={onPress}
       >
         <View style={styles.container}>
           <View style={styles.content}>

@@ -11,7 +11,9 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'transparent',
-    borderColor: 'transparent'
+    borderColor: 'transparent',
+    borderWidth: 0,
+    elevation: 0
   },
   buttonText: {
     fontSize: 16,
