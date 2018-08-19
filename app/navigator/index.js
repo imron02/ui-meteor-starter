@@ -11,6 +11,7 @@ import HomeScreen from '../screens/HomeScreen';
 import ListScreen from '../screens/ListScreen';
 import LoginScreen from '../screens/LoginScreen/container';
 import RegisterScreen from '../screens/RegisterScreen/container';
+import PopupScreen from '../screens/PopupScreen';
 
 // Component
 import MtrStatusBar from '../components/StatusBar/container';
@@ -42,6 +43,9 @@ const DrawerStack = createDrawerNavigator({
   },
   Login: {
     screen: LoginScreen
+  },
+  Popup: {
+    screen: PopupScreen
   }
 });
 
