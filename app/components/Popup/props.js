@@ -4,8 +4,9 @@ export type Props = {
   visible: boolean;
   headerStyle?: string | number;
   headerTitle: string;
-  headerTitleStyle?: string | number;
-  headerImage?: string;
+  headerTitleStyle?: Object;
+  headerImage?: number;
+  children: Object;
   bodyStyle?: string | number;
   onPress: () => void;
 };
