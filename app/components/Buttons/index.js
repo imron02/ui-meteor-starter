@@ -13,38 +13,42 @@ import {
 
 import type { Props } from './props';
 import styles from './styles';
+import colors from '../../utils/colors';
 
 export const MtrBtnRegular = (props: Props) => <Button {...props} />;
 
-export const MtrBtnNative = (props: Props) => (
-  <TouchableNativeFeedback onPress={props.onPress}>
-    <View style={[styles.button, props.style]}>
+const component = (props: Props) => {
+  const color = props.color ? colors.button[props.color] : null;
+  const style = [props.style, color];
+
+  return (
+    <View style={style}>
       <Text style={[styles.title, props.titleStyle]}>{props.title}</Text>
     </View>
+  );
+};
+
+export const MtrBtnNative = (props: Props) => (
+  <TouchableNativeFeedback onPress={props.onPress}>
+    {component(props)}
   </TouchableNativeFeedback>
 );
 
 export const MtrBtnHighlight = (props: Props) => (
   <TouchableHighlight onPress={props.onPress}>
-    <View style={[styles.button, props.style]}>
-      <Text style={[styles.title, props.titleStyle]}>{props.title}</Text>
-    </View>
+    {component(props)}
   </TouchableHighlight>
 );
 
 export const MtrBtnOpacity = (props: Props) => (
   <TouchableOpacity onPress={props.onPress}>
-    <View style={[styles.button, props.style]}>
-      <Text style={[styles.title, props.titleStyle]}>{props.title}</Text>
-    </View>
+    {component(props)}
   </TouchableOpacity>
 );
 
 export const MtrBtnNoFeedback = (props: Props) => (
   <TouchableWithoutFeedback onPress={props.onPress}>
-    <View style={[styles.button, props.style]}>
-      <Text style={[styles.title, props.titleStyle]}>{props.title}</Text>
-    </View>
+    {component(props)}
   </TouchableWithoutFeedback>
 );
 
