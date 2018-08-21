@@ -34,14 +34,17 @@ export default class ButtonScreen extends Component<Props> {
           /> : <View />}
         <MtrBtnHighlight
           title="BUTTON HIGHLIGHT"
+          color="primary"
           onPress={this.onPress}
         />
         <MtrBtnOpacity
           title="BUTTON OPACITY"
+          color="success"
           onPress={this.onPress}
         />
         <MtrBtnNoFeedback
           title="BUTTON NO FEEDBACK"
+          color="danger"
           onPress={this.onPress}
         />
       </View>
