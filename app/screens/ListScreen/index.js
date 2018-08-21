@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 import type { Props } from './props';
 import type { State } from './state';
-import styles from './style';
+import styles from './styles';
 import VerticalList from '../../components/VerticalList';
 import HorizontalList from '../../components/HorizontalList';
 

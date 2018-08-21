@@ -17,7 +17,7 @@ import PopupScreen from '../screens/PopupScreen';
 import MtrStatusBar from '../components/StatusBar/container';
 
 // Styles
-import styles from './style';
+import styles from './styles';
 import colors from '../utils/colors';
 
 import type { Props } from './props';

@@ -7,7 +7,7 @@ import StarRating from 'react-native-star-rating';
 import colors from '../../utils/colors';
 import { MtrBtnNative, MtrBtnOpacity } from '../Buttons';
 import type { dataObject, Props } from './props';
-import styles from './style';
+import styles from './styles';
 import { isAndroid } from '../../utils/commons';
 
 class HorizontalList extends Component<Props> {

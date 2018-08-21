@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { FlatList, View, Text, ImageBackground } from 'react-native';
 
 import type { Props, DataObject } from './props';
-import styles from './style';
+import styles from './styles';
 
 class VerticalList extends Component<Props> {
   renderItem = (data: any) => {

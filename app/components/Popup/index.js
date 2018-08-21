@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import type { Props } from './props';
-import styles from './style';
+import styles from './styles';
 
 class Popup extends PureComponent<Props> {
   static defaultProps = {
