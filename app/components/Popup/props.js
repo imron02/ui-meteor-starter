@@ -1,12 +1,16 @@
 // @flow
 
 export type Props = {
+  animationType: 'fade' | 'slide' | 'none';
   visible: boolean;
   headerStyle?: string | number;
   headerTitle: string;
   headerTitleStyle?: Object;
-  headerImage?: number;
+  headerImage: number;
+  headerTitle: string;
+  headerColor?: string[];
   children: Object;
-  bodyStyle?: string | number;
-  onPress: () => void;
+  onClose: () => void;
+  bodyStyle?: number;
 };
+

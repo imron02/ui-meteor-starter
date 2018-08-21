@@ -41,7 +41,7 @@ class PupupScreen extends Component<Props, State> {
           visible={visible}
           headerImage={meteorLogoWhite}
           headerTitle="Meteor Popup"
-          onPress={this.close}
+          onClose={this.close}
         >
           <Text style={styles.bodyText}>Popup Window React Native</Text>
         </Popup>

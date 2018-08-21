@@ -1,7 +1,6 @@
 // @flow
 
 import { StyleSheet } from 'react-native';
-
 import colors from '../../utils/colors';
 
 const styles = StyleSheet.create({
@@ -21,18 +20,17 @@ const styles = StyleSheet.create({
     width: 280,
     height: 112,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: colors.GREY
+    alignItems: 'center'
   },
   headerImage: {
-    width: 60,
-    height: 60,
+    width: 40,
+    height: 40,
     resizeMode: 'contain'
   },
   headerText: {
     marginTop: 8,
-    fontSize: 18,
-    color: colors.WHITE
+    fontSize: 20,
+    color: colors.DUSTY_GRAY
   },
   body: {
     height: 147,
@@ -48,13 +46,12 @@ const styles = StyleSheet.create({
     height: 36,
     justifyContent: 'center',
     alignSelf: 'flex-end',
-    right: 8
+    right: 8,
+    backgroundColor: colors.WHITE
   },
   buttonText: {
     fontSize: 14,
-    color: colors.DOGGER_BLUE,
-    justifyContent: 'center',
-    textAlign: 'center'
+    color: colors.DODGER_BLUE
   }
 });
 

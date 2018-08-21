@@ -36,7 +36,8 @@
         "exports": "never",
         "functions": "ignore"
       }
-    ]
+    ],
+    "react/default-props-match-prop-types": 0
   },
   "globals": {
     "it": false,

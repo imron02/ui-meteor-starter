@@ -10,9 +10,13 @@ import {
 } from 'react-native';
 
 import type { Props } from './props';
-import styles from './styles';
+import styles from './style';
 
 class Popup extends PureComponent<Props> {
+  static defaultProps = {
+    animationType: 'fade'
+  }
+
   renderBanner = () => {
     const {
       headerTitle,
@@ -34,15 +38,16 @@ class Popup extends PureComponent<Props> {
       visible,
       children,
       bodyStyle,
-      onPress
+      onClose,
+      animationType
     } = this.props;
 
     return (
       <Modal
-        animationType="fade"
+        animationType={animationType}
         transparent
         visible={visible}
-        onRequestClose={onPress}
+        onRequestClose={onClose}
       >
         <View style={styles.container}>
           <View style={styles.content}>
@@ -51,7 +56,7 @@ class Popup extends PureComponent<Props> {
               {children}
             </View>
             <View style={styles.footer}>
-              <TouchableOpacity style={styles.button} onPress={onPress}>
+              <TouchableOpacity style={styles.button} onPress={onClose}>
                 <Text style={styles.buttonText}>OK</Text>
               </TouchableOpacity>
             </View>
